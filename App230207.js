@@ -17,7 +17,7 @@ export default function App() {
     setRefreshing(true)
     setDATA([...DATA,{
       title:'Title '+(DATA.length+1),
-      data:['item '+(DATA.length+1)+'-1', 'item '+(DATA.length+1)+'-2']
+      data:['Item '+(DATA.length+1)+'-1', 'Item '+(DATA.length+1)+'-2']
     }])
     setRefreshing(false)
   }
