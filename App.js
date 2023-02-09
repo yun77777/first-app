@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, Modal, Linking, Pressable, SafeAreaView, TextInput, ScrollView, RefreshControl, SectionList, TouchableOpacity, TouchableHighlight, Alert } from 'react-native';
+import { StyleSheet, Image, Text, View, Button, Modal, Linking, Pressable, SafeAreaView, TextInput, ScrollView, RefreshControl, SectionList, TouchableOpacity, TouchableHighlight, Alert } from 'react-native';
 
 import React, {useState} from 'react';
 
@@ -96,11 +96,22 @@ export default function App() {
         <Text>submitted : {submitted}</Text>
 
       {submitted ?
-        <Text style={styles.text}>
-        You are registered as {name}
-        </Text>
+        <View style={styles.body}>
+          <Text style={styles.text}>
+          You are registered as {name}
+          </Text>
+          <Image 
+          style={styles.image}
+          source={require('./assets/chamaeleon.png')}
+          resizeMode='stretch'
+          />
+        </View>
         :
-        null
+        <Image 
+        style={styles.image}
+        source={require('./assets/crocodile.png')}
+        resizeMode='stretch'
+        />
         }
       </View>
      </SafeAreaView>
@@ -175,6 +186,12 @@ const styles = StyleSheet.create({
     backgroundColor:'#00ffff',
     borderBottomLeftRadius:20,
     borderBottomRightRadius:20
+  },
+  image:{
+    width:100,
+    height:100,
+    margin:10,
+
   }
 });
 
